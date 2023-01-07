@@ -7,7 +7,6 @@ import com.example.rentACar.dataAccess.abstracts.BrandRepository;
 import com.example.rentACar.entities.concretes.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class BrandManager implements BrandService {
     public List<GetAllBrandsResponse> getAll() {
         List<Brand> brands=brandRepository.findAll();
         List<GetAllBrandsResponse> brandsResponse= new ArrayList<>();
-        //iş kurallar v ı
+        //iş kuralları
         for (Brand brand: brands) {
             brandsResponse.add(new GetAllBrandsResponse(brand.getId(), brand.getName()));
         }
